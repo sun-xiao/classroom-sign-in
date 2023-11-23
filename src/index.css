@@ -13,18 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
-.position{
+/* .position{
   display: flex;
-}
+} */
 
 
-body{
+/* body{
   position: fixed;
   left: 50%;
   top: 40%;
   transform: translate(-50%,-50%);
   margin: 0;
-}
+} */
 
 /* a {
   font-weight: 500;
