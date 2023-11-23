@@ -16,14 +16,13 @@
 .position{
   display: flex;
 }
-.form{
+
+
+body{
   position: fixed;
   left: 50%;
-  top: 50%;
+  top: 40%;
   transform: translate(-50%,-50%);
-
-}
-body{
   margin: 0;
 }
 
