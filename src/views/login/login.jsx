@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import './login.css'
+import './login.css';
+
 const LoginForm = () => {
   const [loginData, setLoginData] = useState({
     netId: '',
-    password: ''
+    password: '',
+    mode: 'student',    // Default Selection
   });
   
   //For further adjustment
@@ -44,6 +46,38 @@ const LoginForm = () => {
             onChange={handleChange}
             style={{ width: '90%', padding: '8px' }}
           />
+        </div>
+        <div className='modeSelection'>
+          <label>
+            <input
+              type='radio'
+              name='mode'
+              value='student'
+              checked={loginData.mode==='student'}
+              onChange={handleChange}
+            />
+            Student
+          </label>
+          <label>
+            <input
+            type = 'radio'
+            name = 'mode'
+            value= 'instructor'
+            checked={loginData.mode==='instructor'}
+            onChange={handleChange}
+            />
+            Instructor
+          </label>
+          <label>
+            <input
+            type='radio'
+            name='mode'
+            value= 'ta'
+            checked={loginData.mode==='ta'}
+            onChange={handleChange}
+            />
+            TA
+          </label>
         </div>
         <div className='bottom_style'>
           <button type="submit" className='submit_style'>Login</button>
