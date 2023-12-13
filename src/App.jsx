@@ -7,15 +7,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/*  */}
       </header>
       <main>
         <div className='postiton'>
-          <LoginForm className='form'/> {/*  */}
+          <LoginForm/>
         </div>
       </main>
       <footer>
-        {/*  */}
       </footer>
     </div>
   );
