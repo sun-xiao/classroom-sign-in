@@ -1,7 +1,39 @@
 body{
-    position: fixed;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%,-50%);
-    margin: 0;
-  } 
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%,-50%);
+  margin: 0;
+} 
+
+.loginStyle{
+  width: 300px;
+  margin: auto;
+  padding: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+.loginID_style{
+  margin: 10px 0;
+}
+
+.loginHeading{
+  text-align: center;
+  left: 50%;
+}
+
+.password_style{
+  margin: 10px 0;
+}
+
+.bottom_style{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.submit_style{
+  padding: 10px 15px;
+  
+}
