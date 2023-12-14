@@ -7,7 +7,7 @@ const LoginForm = () => {
     password: '',
     mode: 'student',    // Default Selection
   });
-  
+    
   //For further adjustment
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,11 +18,29 @@ const LoginForm = () => {
   };
 
   //For further adjustment
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(loginData);
+    try {
+      const response = await fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+      });
+  
+      const data = await response.json();
+      if (response.ok) {
+        
+        console.log('Login successful', data);
+      } else {
+        console.log('Login failed', data.message);
+      }
+    } catch (error) {
+      console.error('There was an error!', error);
+    }
   };
-
+  
   return (
     <div className='loginStyle'>
       <h2 className='loginHeading'>Login</h2>
