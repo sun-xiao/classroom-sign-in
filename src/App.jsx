@@ -1,7 +1,7 @@
 // App.jsx
 import React from 'react';
 import LoginForm from './views/login/login'; 
-
+import './APP.css'
 
 function App() {
   return (
