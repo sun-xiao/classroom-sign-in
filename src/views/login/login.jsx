@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './login.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     netId: '',
     password: '',
@@ -17,7 +19,7 @@ const LoginForm = () => {
     }));
   };
 
-  //For further adjustment
+  //This step is to connect BE and to route different modes.
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -28,18 +30,35 @@ const LoginForm = () => {
         },
         body: JSON.stringify(loginData),
       });
-  
-      const data = await response.json();
+    
       if (response.ok) {
-        
+        const data = await response.json(); 
         console.log('Login successful', data);
+        // Based on different mode
+        switch (loginData.mode) {
+          case 'student':
+            navigate('/student-class'); // student mode
+            break;
+          case 'instructor':
+            navigate('/instructor-class'); // Instructor mode
+            break;
+          case 'ta':
+            navigate('/ta-class'); // TA mode
+            break;
+          default:
+            navigate('/'); // Default
+            break;
+        }
       } else {
-        console.log('Login failed', data.message);
+        // if login failed
+        const errorMessage = await response.text(); 
+        console.log('Login failed', errorMessage);
       }
     } catch (error) {
       console.error('There was an error!', error);
     }
   };
+  
   
   return (
     <div className='loginStyle'>
