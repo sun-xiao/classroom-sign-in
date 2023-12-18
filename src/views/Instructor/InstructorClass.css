@@ -14,7 +14,6 @@ html, body, #root {
   .sidebar {
     width: 500px; /* Or whatever width you prefer */
     height: 500px;
-    align-content: center;
     background: #333; /* Sidebar color */
     color: white;
     padding: 15px;
