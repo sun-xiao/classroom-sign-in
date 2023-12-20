@@ -1,6 +1,6 @@
 // ClassManagement.jsx
-import React from 'react';
-import './InstructorClass.css'; // 确保CSS文件的名称和路径是正确的
+import React,{ useEffect } from 'react';
+import './InstructorClass.css'; 
 
 const ClassManagement = () => {
   const classData = [
@@ -8,6 +8,13 @@ const ClassManagement = () => {
     { id: 24, name: 'CMPE454', year: 2016, department: 'ECE' },
     { id: 26, name: 'CMPE458', year: 2019, department: 'ECE' },
   ];
+
+  useEffect(()=>{
+    document.body.style.width = '100%';
+    document.body.style.height = '570px';
+    document.body.style.margin = '0';
+    document.body.style.padding = '0';
+  })
 
   return (
     <div className="class-management">
