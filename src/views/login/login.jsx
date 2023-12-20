@@ -40,7 +40,7 @@ const LoginForm = () => {
             navigate('/student-class'); // student mode
             break;
           case 'instructor':
-            navigate('/instructor-class'); // Instructor mode
+            navigate('/instructor-main'); // Instructor mode
             break;
           case 'ta':
             navigate('/ta-class'); // TA mode

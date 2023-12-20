@@ -12,8 +12,9 @@
   }
   
   .sidebar {
+    margin-top: -3%;
     width: 25%; /* Or whatever width you prefer */
-    height: 5500px;
+    height: 100vh;
     background: #333333; /* Sidebar color */
     color: white;
     padding: 15px;
@@ -36,6 +37,7 @@
   }
   
   .content {
+    margin-top: -5%;
     height: 700px;
     flex-grow: 1;
     overflow-y: auto; /* For scrolling if content overflows */
@@ -58,4 +60,3 @@
     background-color: #4CAF50; /* Header background color */
     color: white;
   }
-  

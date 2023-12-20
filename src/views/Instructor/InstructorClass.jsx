@@ -1,6 +1,7 @@
 // ClassManagement.jsx
 import React,{ useEffect } from 'react';
 import './InstructorClass.css'; 
+import { Link } from 'react-router-dom';
 
 const ClassManagement = () => {
   const classData = [
@@ -19,10 +20,10 @@ const ClassManagement = () => {
   return (
     <div className="class-management">
       <aside className="sidebar">
-        <ul>
-          <li>Main</li>
-          <li className="active">Class Management</li>
-          <li>Instructor Management</li>
+      <ul>
+          <li><Link to="/Instructor-main">Main</Link></li>
+          <li><Link to="/class-management">Class Management</Link></li>
+          <li><Link to="/instructor/student">Student Management</Link></li>
           {/* Add more items if needed */}
         </ul>
       </aside>
