@@ -1,58 +1,53 @@
 // ClassManagement.jsx
-import React,{ useEffect } from 'react';
-import './InstructorClass.css'; 
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 const ClassManagement = () => {
-  const classData = [
-    { id: 25, name: 'ELEC498', year: 2017, department: 'ECE' },
-    { id: 24, name: 'CMPE454', year: 2016, department: 'ECE' },
-    { id: 26, name: 'CMPE458', year: 2019, department: 'ECE' },
-  ];
+  const [courses, setCourses] = useState([]);
 
-  useEffect(()=>{
-    document.body.style.width = '100%';
-    document.body.style.height = '570px';
-    document.body.style.margin = '0';
-    document.body.style.padding = '0';
-  })
+  useEffect(() => {
+    // Fetch the course data from the database and set it to the state
+    // This is a placeholder for your actual database call
+    setCourses([
+      { id: 1, name: 'Course 1', department: 'Department 1' },
+      // ... more courses
+    ]);
+  }, []);
+
+  const handleEdit = (courseId) => {
+    // Logic to handle edit
+  };
+
+  const handleDelete = (courseId) => {
+    // Logic to handle delete
+  };
 
   return (
-    <div className="class-management">
-      <aside className="sidebar">
-      <ul>
-          <li><Link to="/Instructor-main">Main</Link></li>
-          <li><Link to="/class-management">Class Management</Link></li>
-          <li><Link to="/instructor/student">Student Management</Link></li>
-          {/* Add more items if needed */}
-        </ul>
-      </aside>
-      <section className="content">
-        <h1>Class Management System</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>ClassId</th>
-              <th>ClassName</th>
-              <th>Year</th>
-              <th>Faculty</th>
+    <div className="course-management">
+      <table>
+        <thead>
+          <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Department</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {courses.map(course => (
+            <tr key={course.id}>
+              <td>{course.id}</td>
+              <td>{course.name}</td>
+              <td>{course.department}</td>
+              <td>
+                <button onClick={() => handleEdit(course.id)}>Edit</button>
+                <button onClick={() => handleDelete(course.id)}>Delete</button>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {classData.map((classInfo) => (
-              <tr key={classInfo.id}>
-                <td>{classInfo.id}</td>
-                <td>{classInfo.name}</td>
-                <td>{classInfo.year}</td>
-                <td>{classInfo.department}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
 
 export default ClassManagement;
-

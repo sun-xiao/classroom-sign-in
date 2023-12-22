@@ -1,57 +1,33 @@
 /* InstructorMain.css */
-* {
-  box-sizing: border-box; 
-  margin: 0% ;
-  padding: 0%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
 .instructor-main {
   display: flex;
   height: 100vh;
 }
 
-.sidebar {
-  margin-top: -3%;
-  width: 25%; /* Or whatever width you prefer */
-  height: 100vh;
-  background: #333333; /* Sidebar color */
-  color: white;
-  padding: 15px;
-  justify-content: space-between;
-}
-
 .content {
-  margin-top: -23.2%; 
   width: 100%;
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   position: relative; /* For absolute positioning of the text */
 }
 
 .background-image {
-  width: 1000px; /* Adjust the size of the image */
-  height: 500px;
-  object-fit: scale-down; /* To keep the aspect ratio */
+  margin-top: -46.1%;
+  margin-left: 26.76%;
+  width: 100%; /* Adjust the size of the image */
+  height: 86.7%; 
+  /* To keep the aspect ratio */
 }
 
 .overlay-text {
-  position: absolute;
-  color: white; /* Choose a text color that is visible on the image */
-  font-size: 2rem; /* Adjust size as needed */
-  text-align: center;
-}
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.sidebar li.active {
-  background: #555; /* Active item color */
+  font-family: 'Space Grotesk', sans-serif;
+  position: fixed;
+  color: black; /* Choose a text color that is visible on the image */
+  font-size: 3rem; /* Adjust size as needed */
+  margin-top: -25%;
+  margin-left: 25%;
 }

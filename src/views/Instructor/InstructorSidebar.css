@@ -1,0 +1,35 @@
+.sidebar {
+    margin-top: -2%;
+    width: 25%; /* Or whatever width you prefer */
+    height: 750px;
+    background: #333333; /* Sidebar color */
+    color: white;
+    padding: 15px;
+    justify-content: space-between;
+  }
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li{
+    margin-top: 100px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  .sidebar a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Keeps the font color the same as the parent element */
+  }
+  
+  .sidebar a:hover,
+  .sidebar a:active,
+  .sidebar a:focus {
+    text-decoration: none; /* Removes the underline on hover, active, or focus */
+    color: inherit; /* Keeps the font color the same on hover, active, or focus */
+  }
+  
+  
