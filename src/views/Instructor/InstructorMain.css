@@ -2,22 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
 
 .instructor-main {
-  display: flex;
+  display: inline-flex;
   height: 100vh;
 }
 
 .content {
   width: 100%;
   flex-grow: 1;
-  display: flex;
   justify-content: center;
-  /* align-items: center; */
-  position: relative; /* For absolute positioning of the text */
+  align-items: center;
+  /* position: relative; For absolute positioning of the text */
 }
 
 .background-image {
-  margin-top: -46.1%;
-  margin-left: 26.76%;
+  margin-top: -2.8%;
+  margin-left: 0%;
   width: 100%; /* Adjust the size of the image */
   height: 86.7%; 
   /* To keep the aspect ratio */
@@ -25,7 +24,7 @@
 
 .overlay-text {
   font-family: 'Space Grotesk', sans-serif;
-  position: fixed;
+  position: absolute;
   color: black; /* Choose a text color that is visible on the image */
   font-size: 3rem; /* Adjust size as needed */
   margin-top: -25%;

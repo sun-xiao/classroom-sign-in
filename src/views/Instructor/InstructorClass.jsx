@@ -22,7 +22,7 @@ const ClassManagement = () => {
   };
 
   return (
-    <div className="course-management">
+    <div className="instructor-class">
       <table>
         <thead>
           <tr>

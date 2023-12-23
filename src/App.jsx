@@ -10,21 +10,15 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Sidebar />
-        <header className="App-header">
-        </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<LoginForm />} />
-            <Route path="/instructor-class" element={<InstructorClass />} />
-            <Route path="/instructor-main" element={<InstructorMain />} /> 
-          </Routes>
-        </main>
-        <footer>
-        </footer>
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/class-management" element={<><Sidebar /><InstructorClass /></>} />
+          <Route path="/instructor-main" element={<><Sidebar /><InstructorMain /></>} /> 
+        </Routes>
       </div>
     </Router>
   );
 }
+
 
 export default App;
