@@ -5,20 +5,55 @@ const ClassManagement = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    // Fetch the course data from the database and set it to the state
-    // This is a placeholder for your actual database call
-    setCourses([
-      { id: 1, name: 'Course 1', department: 'Department 1' },
-      // ... more courses
-    ]);
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/api/classes'); // 调整URL以匹配你的API
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const coursesData = await response.json();
+        setCourses(coursesData);
+      } catch (error) {
+        console.error('Fetch courses failed:', error);
+      }
+    };
+
+    fetchCourses();
   }, []);
 
-  const handleEdit = (courseId) => {
-    // Logic to handle edit
+  const handleAdd = async (newCourse) => {
+    try {
+      const response = await fetch('http://localhost:3000/api/classes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newCourse), 
+      });
+      if (response.ok) {
+        const addedCourse = await response.json(); 
+        setCourses([...courses, addedCourse]); 
+      } else {
+        throw new Error('Add request failed');
+      }
+    } catch (error) {
+      console.error('Failed to add the course:', error);
+    }
   };
 
-  const handleDelete = (courseId) => {
-    // Logic to handle delete
+  const handleDelete = async (courseId) => {
+    try {
+      const response = await fetch(`http://localhost:3000/api/classes/${courseId}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        setCourses(courses.filter(course => course.id !== courseId));
+      } else {
+        throw new Error('Delete request failed');
+      }
+    } catch (error) {
+      console.error('Failed to delete the course:', error);
+    }
   };
 
   return (
@@ -29,6 +64,7 @@ const ClassManagement = () => {
             <th>Course ID</th>
             <th>Course Name</th>
             <th>Department</th>
+            <th>Year</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -39,7 +75,7 @@ const ClassManagement = () => {
               <td>{course.name}</td>
               <td>{course.department}</td>
               <td>
-                <button onClick={() => handleEdit(course.id)}>Edit</button>
+                <button onClick={() => handleAdd(course.id)}>Add</button>
                 <button onClick={() => handleDelete(course.id)}>Delete</button>
               </td>
             </tr>
